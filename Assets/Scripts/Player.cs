@@ -15,7 +15,7 @@ public class Player : MonoBehaviour, IKitchenObjectParent
 
     private Vector2 inputVector;
     private bool isWalking;
-    private ClearCounter selectedCounter;
+    private BaseCounter selectedCounter;
     private KitchenObject kitchenObject;
 
     // RaycastHit hitInfo;
@@ -24,7 +24,7 @@ public class Player : MonoBehaviour, IKitchenObjectParent
     public event EventHandler<OnSelectedCounterChangedEventArgs> OnSelectedCounterChanged;
     public class OnSelectedCounterChangedEventArgs : EventArgs
     {
-        public ClearCounter selectedCounter;
+        public BaseCounter selectedCounter;
     }
 
     private void Awake()
@@ -64,9 +64,9 @@ public class Player : MonoBehaviour, IKitchenObjectParent
         // can also use RaycastAll to get an array of objects and then search one by one to see which one is counter
         if (Physics.Raycast(transform.position, lastInteractDir, out RaycastHit raycastHit, interactDistance, counterLayer))
         {
-            bool CounterTouching = raycastHit.transform.TryGetComponent(out ClearCounter clearCounter);
+            bool CounterTouching = raycastHit.transform.TryGetComponent(out BaseCounter baseCounter);
             if (CounterTouching) {
-                SetSelectedCounter(clearCounter);
+                SetSelectedCounter(baseCounter);
             } else {
                 SetSelectedCounter(null); 
              }
@@ -135,7 +135,7 @@ public class Player : MonoBehaviour, IKitchenObjectParent
         return isWalking;
     }
 
-    private void SetSelectedCounter(ClearCounter selectedCounter) {
+    private void SetSelectedCounter(BaseCounter selectedCounter) {
         this.selectedCounter = selectedCounter;
         OnSelectedCounterChanged?.Invoke(this, new OnSelectedCounterChangedEventArgs { selectedCounter = selectedCounter});
     }
