@@ -35,5 +35,4 @@ public class KitchenObject : MonoBehaviour
     {
         return kitchenObjectParent;
     }
-
 }
