@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08c56d3d45f653f48acf4bed707eddfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseCounter: {fileID: 0}
+  baseCounter: {fileID: 1565246380104619126}
   counterVisualArray:
   - {fileID: 9048967571171140570}
   - {fileID: 5006691075863971635}
@@ -240,6 +240,12 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1565246380104619126}
   m_SourcePrefab: {fileID: 100100000, guid: 95831d5021b7139449171571b559f6ee, type: 3}
+--- !u!4 &2458400467561138711 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1328766580188367190, guid: 95831d5021b7139449171571b559f6ee,
+    type: 3}
+  m_PrefabInstance: {fileID: 3489520160869122881}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6130947672197153816 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7311810004527007577, guid: 95831d5021b7139449171571b559f6ee,
@@ -264,6 +270,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc0ed3831e2076f4a8656228aa4aeaa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  counterTopPoint: {fileID: 2458400467561138711}
+  cuttingRecipeSOArray:
+  - {fileID: 11400000, guid: 0098ca18b21a7e84694158eb1a4b8405, type: 2}
+  - {fileID: 11400000, guid: 12b0ee9f60983a349b0ed011f911312b, type: 2}
+  - {fileID: 11400000, guid: 81866fee5dcce6040806efeea5b5b81f, type: 2}
 --- !u!1001 &8575277242448994700
 PrefabInstance:
   m_ObjectHideFlags: 0
