@@ -12,6 +12,7 @@ public class Player : MonoBehaviour, IKitchenObjectParent
     [SerializeField] private LayerMask counterLayer;
     [SerializeField] private Transform kitchenObjectHoldPoint;
 
+    public event EventHandler OnPickedSomething;
 
     private Vector2 inputVector;
     private bool isWalking;
@@ -155,6 +156,10 @@ public class Player : MonoBehaviour, IKitchenObjectParent
 
     public void SetKitchenObject(KitchenObject kitchenObject) {
         this.kitchenObject = kitchenObject;
+        if (kitchenObject != null)
+        {
+            OnPickedSomething?.Invoke(this, EventArgs.Empty);
+        }
     }
 
     public void ClearKitchenObject() {
