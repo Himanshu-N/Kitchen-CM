@@ -20,7 +20,7 @@ public static class Loader {
         SceneManager.LoadScene(Scene.LoadingScene.ToString());
     }
 
-    public static void LoaderCallback()
+    public static void LoaderCallbac()
     {
         //Loads on the first frame of loading scene
         SceneManager.LoadScene(targetScene.ToString());
