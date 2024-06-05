@@ -6,7 +6,15 @@ using UnityEngine;
 public class GameManagerCountdownUI : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI countdownText;
+    Animator animator;
+    private int previousCountdownNumber;
+    private const string NUMBER_POPUP = "PopUp";
 
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+        
+    }
     private void Start()
     {
         GameManager.Instance.OnStateChanged += GameManger_OnStateChanged;
@@ -28,8 +36,16 @@ public class GameManagerCountdownUI : MonoBehaviour
 
     private void Update()
     {
-        countdownText.text = Mathf.Ceil(GameManager.Instance.GameCountdownTimer()).ToString();
+        int countdownNumber = Mathf.CeilToInt(GameManager.Instance.GameCountdownTimer());
+        countdownText.text = countdownNumber.ToString();
         //countdownText.text = GameManager.Instance.GameCountdownTimer().ToString(#.##); shows upto 2 decimal place
+
+        if (countdownNumber != previousCountdownNumber)
+        {
+            previousCountdownNumber = countdownNumber;
+            animator.SetTrigger(NUMBER_POPUP);
+            SoundManager.Instance.PlayCountdownSound();
+        }
     }
 
     private void Show()
