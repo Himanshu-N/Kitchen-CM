@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
 
     private float countdownTimer = 3f;
     private float gamePlayingTimer;
-    private float gamePlayingTimerMax = 15f;
+    private float gamePlayingTimerMax = 20f;
     private bool isPaused = false;
 
     private void Awake()
@@ -80,7 +80,6 @@ public class GameManager : MonoBehaviour
             case State.gameOver:
                 break;
         }
-        Debug.Log(state);
     }
 
     public bool IsGamePlaying()
