@@ -1,2 +1,2 @@
 # Kitchen-CM
- Kitchen game tutorial by code monkey
+ A recipe-delivery Kitchen Game.
