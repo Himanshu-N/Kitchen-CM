@@ -10,4 +10,4 @@ A fun and interactive cooking simulation game where players manage a virtual kit
 https://github.com/user-attachments/assets/27fef248-1998-4fee-b10d-aa50dab56271
 
 ### About the Project
-This game was developed as a fun approach to learning Unity through free online resources(special thanks to [CodeMonkey](https://www.youtube.com/@CodeMonkeyUnity), focusing on creating intuitive player controls and high-performance architecture. 
+This game was developed as a fun approach to learning Unity through free online resources (special thanks to [CodeMonkey](https://www.youtube.com/@CodeMonkeyUnity)), focusing on creating intuitive player controls and high-performance architecture. 
